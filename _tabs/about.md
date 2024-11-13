@@ -13,4 +13,4 @@ I'm **Vijay Velu**, an engineer and cybersecurity enthusiast. I'm certified in C
 
 # Badges 🎖️
 
-![TryHackMe Badge](https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1909016)
+<img src="https://tryhackme-badges.s3.amazonaws.com/vijay.velu.png" alt="Your Image Badge" width="200" height="200" />

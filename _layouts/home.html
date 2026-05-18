@@ -1,300 +1,412 @@
 ---
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vijay Velu — Senior Technical Support Specialist | IAM</title>
   <meta name="description" content="Senior Technical Support Specialist at OpenText, specialising in IAM — NetIQ IDM, eDirectory, NAM. CEH-certified ethical hacker. I troubleshoot what others escalate.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+  <style>
+    /* ═══════════════════════════════════════════
+       THEME VARIABLES
+    ═══════════════════════════════════════════ */
     :root {
-      --bg:         #0d1117;
-      --surface:    #161b22;
-      --border:     #30363d;
-      --text:       #e6edf3;
-      --muted:      #8b949e;
-      --accent:     #4de8b0;
-      --accent-dim: rgba(77, 232, 176, 0.08);
+      /* dark (default) */
+      --bg:          #090d16;
+      --bg-2:        #0c1120;
+      --surface:     #0f1623;
+      --surface-2:   #141e2e;
+      --border:      #1e2d3d;
+      --border-2:    #2a3f55;
+      --text:        #e8eef4;
+      --text-2:      #7b8fa6;
+      --text-3:      #4a6175;
+      --accent:      #4ade80;
+      --accent-2:    #818cf8;
+      --accent-dim:  rgba(74, 222, 128, 0.07);
+      --accent-glow: rgba(74, 222, 128, 0.18);
+      --dot-color:   rgba(255,255,255,0.03);
+      --card-hover:  rgba(74, 222, 128, 0.06);
+      --shadow:      0 1px 3px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3);
+
+      --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    html { scroll-behavior: smooth; }
+    [data-theme="light"] {
+      --bg:          #f8fafc;
+      --bg-2:        #f1f5f9;
+      --surface:     #ffffff;
+      --surface-2:   #f8fafc;
+      --border:      #e2e8f0;
+      --border-2:    #cbd5e1;
+      --text:        #0f172a;
+      --text-2:      #475569;
+      --text-3:      #94a3b8;
+      --accent:      #16a34a;
+      --accent-2:    #4f46e5;
+      --accent-dim:  rgba(22, 163, 74, 0.07);
+      --accent-glow: rgba(22, 163, 74, 0.12);
+      --dot-color:   rgba(0,0,0,0.04);
+      --card-hover:  rgba(22, 163, 74, 0.04);
+      --shadow:      0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    /* ═══════════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════════ */
+    *, *::before, *::after {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
 
     body {
-      background: var(--bg);
+      background-color: var(--bg);
+      background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+      background-size: 22px 22px;
       color: var(--text);
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.7;
       min-height: 100vh;
+      transition: background-color var(--transition), color var(--transition);
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: opacity var(--transition);
+    }
+    a:hover { opacity: 0.8; text-decoration: none; }
 
-    /* ─── NAV ─── */
+    /* ═══════════════════════════════════════════
+       SCROLL REVEAL
+    ═══════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ═══════════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════════ */
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.25rem 2rem;
+      padding: 0 2rem;
+      height: 60px;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: rgba(13, 17, 23, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      z-index: 100;
+      transition: background var(--transition), border-color var(--transition);
     }
 
     .nav-logo {
       font-family: 'JetBrains Mono', monospace;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--text);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .nav-logo .logo-accent { color: var(--accent); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
     }
 
-    .nav-logo span { color: var(--accent); }
-
-    .nav-links { display: flex; gap: 1.75rem; list-style: none; align-items: center; }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.875rem;
-      transition: color 0.15s;
+    .nav-right a {
+      color: var(--text-2);
+      font-size: 0.82rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav-right a:hover {
+      color: var(--text);
+      background: var(--surface-2);
+      opacity: 1;
     }
 
-    .nav-links a:hover { color: var(--text); text-decoration: none; }
-
-    .nav-cta {
+    .nav-gh {
       font-family: 'JetBrains Mono', monospace !important;
-      font-size: 0.78rem !important;
-      border: 1px solid var(--accent) !important;
+      font-size: 0.75rem !important;
+      border: 1px solid var(--border-2) !important;
+      color: var(--text) !important;
+      margin-left: 0.25rem;
+    }
+    .nav-gh:hover {
+      border-color: var(--accent) !important;
       color: var(--accent) !important;
-      padding: 0.3rem 0.75rem;
-      border-radius: 4px;
-      transition: background 0.15s !important;
     }
 
-    .nav-cta:hover { background: var(--accent-dim) !important; }
+    /* Theme toggle */
+    .theme-toggle {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-2);
+      cursor: pointer;
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+      margin-left: 0.5rem;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
 
-    /* ─── LAYOUT ─── */
-    main { max-width: 920px; margin: 0 auto; padding: 0 2rem; }
+    /* ═══════════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════════ */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
     section {
       padding: 5rem 0;
       border-bottom: 1px solid var(--border);
+      transition: border-color var(--transition);
     }
-
-    section:last-child { border-bottom: none; }
+    section:last-of-type { border-bottom: none; }
 
     .section-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 2.25rem;
+      font-size: 0.72rem;
+      color: var(--text-3);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
     }
 
-    /* ─── HERO ─── */
-    .hero { padding: 7rem 0 5rem; }
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    .hero {
+      padding: 7rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ambient glow behind hero text */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: -5%;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    .hero-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--text-2);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.28rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1.75rem;
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2.4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+      50%       { box-shadow: 0 0 0 5px transparent; }
+    }
 
     .hero-eyebrow {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.05em;
+      font-size: 0.78rem;
+      color: var(--text-3);
+      margin-bottom: 1.1rem;
     }
 
     .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 4.25rem);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
       font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.025em;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
     }
 
-    .hero h1 .hi { color: var(--accent); }
-
-    .hero-desc {
-      font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 580px;
-      margin-bottom: 2.5rem;
-      line-height: 1.75;
+    .hero h1 .grad {
+      background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .hero-actions { display: flex; gap: 0.85rem; flex-wrap: wrap; }
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      height: 0.85em;
+      background: var(--accent);
+      vertical-align: text-bottom;
+      margin-left: 3px;
+      border-radius: 1px;
+      animation: blink 1.1s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-2);
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .hero-desc strong { color: var(--text); font-weight: 500; }
+
+    .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      padding: 0.6rem 1.2rem;
-      border-radius: 6px;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      transition: all 0.15s;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all var(--transition);
       cursor: pointer;
       white-space: nowrap;
     }
-
-    .btn:hover { text-decoration: none; }
+    .btn:hover { opacity: 1; text-decoration: none; }
 
     .btn-primary {
       background: var(--accent);
-      color: #0d1117;
+      color: #0a1a12;
       font-weight: 700;
     }
-
-    .btn-primary:hover { opacity: 0.88; }
+    .btn-primary:hover { filter: brightness(1.08); }
 
     .btn-ghost {
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
-
-    /* ─── SKILLS ─── */
-    .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.55rem; }
-
-    .skill {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      padding: 0.32rem 0.7rem;
+      border: 1px solid var(--border-2);
+      color: var(--text-2);
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--muted);
     }
-
-    .skill.cert {
+    .btn-ghost:hover {
       border-color: var(--accent);
       color: var(--accent);
       background: var(--accent-dim);
     }
 
-    /* ─── CARDS ─── */
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.1rem; }
+    /* ═══════════════════════════════════════════
+       SKILLS
+    ═══════════════════════════════════════════ */
+    .skills-group { margin-bottom: 1.5rem; }
+    .skills-group:last-child { margin-bottom: 0; }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      transition: border-color 0.2s, transform 0.15s;
-    }
-
-    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 0.9rem;
-    }
-
-    .card-icon { font-size: 1.5rem; line-height: 1; }
-
-    .badge {
+    .skills-group-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.68rem;
-      padding: 0.18rem 0.5rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      color: var(--accent);
+      color: var(--text-3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
     }
 
-    .card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.45rem; }
 
-    .card p {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.65;
-      flex: 1;
-      margin-bottom: 1rem;
-    }
-
-    .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 1rem; }
-
-    .tag {
+    .skill {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      padding: 0.18rem 0.45rem;
-      background: rgba(255,255,255,0.04);
-      border-radius: 3px;
-      color: var(--muted);
-    }
-
-    .card-link {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      color: var(--accent);
-      margin-top: auto;
-    }
-
-    /* ─── ABOUT ─── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 3.5rem;
-      align-items: start;
-    }
-
-    .about-text p {
-      font-size: 0.93rem;
-      color: var(--muted);
-      margin-bottom: 1.1rem;
-      line-height: 1.75;
-    }
-
-    .about-links { display: flex; flex-direction: column; gap: 0.7rem; }
-
-    .profile-link {
-      display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      padding: 0.85rem 1rem;
+      font-size: 0.75rem;
+      padding: 0.28rem 0.65rem;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 7px;
-      color: var(--text);
-      font-size: 0.88rem;
-      transition: border-color 0.15s;
+      border-radius: 5px;
+      color: var(--text-2);
+      transition: border-color var(--transition), color var(--transition), background var(--transition);
+      cursor: default;
     }
+    .skill:hover { border-color: var(--border-2); color: var(--text); }
 
-    .profile-link:hover { border-color: var(--accent); text-decoration: none; }
-
-    .profile-link-icon { font-size: 1.15rem; flex-shrink: 0; }
-
-    .profile-link-sub {
-      display: block;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 0.1rem;
+    .skill.cert {
+      border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+      color: var(--accent);
+      background: var(--accent-dim);
     }
+    .skill.cert:hover { border-color: var(--accent); }
 
-    /* ─── EXPERIENCE ─── */
+    /* ═══════════════════════════════════════════
+       EXPERIENCE
+    ═══════════════════════════════════════════ */
     .exp-list { display: flex; flex-direction: column; gap: 1rem; }
 
     .exp-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 8px 8px 0;
-      padding: 1.25rem 1.5rem;
-      transition: border-color 0.2s;
+      border-radius: 10px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
     }
-
-    .exp-card:hover { border-color: var(--accent); }
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent-2));
+      border-radius: 10px 0 0 10px;
+    }
+    .exp-card:hover {
+      border-color: var(--border-2);
+      box-shadow: var(--shadow);
+    }
 
     .exp-header {
       display: flex;
@@ -302,142 +414,346 @@
       align-items: flex-start;
       flex-wrap: wrap;
       gap: 0.5rem;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
     }
 
-    .exp-title { font-size: 0.97rem; font-weight: 600; }
+    .exp-title { font-size: 0.95rem; font-weight: 600; }
 
     .exp-period {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.73rem;
-      color: var(--muted);
+      font-size: 0.7rem;
+      color: var(--text-3);
+      background: var(--surface-2);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
       white-space: nowrap;
     }
 
     .exp-company {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--accent);
-      margin-bottom: 0.65rem;
       display: block;
+      margin-bottom: 0.85rem;
     }
 
     .exp-desc {
       font-size: 0.86rem;
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 0.65rem;
+      color: var(--text-2);
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .exp-desc:last-of-type { margin-bottom: 1rem; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      padding: 0.15rem 0.45rem;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-3);
+      transition: border-color var(--transition), color var(--transition);
     }
 
-    /* ─── LINKEDIN BADGE ─── */
+    /* ═══════════════════════════════════════════
+       FOCUS AREA CARDS
+    ═══════════════════════════════════════════ */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition),
+                  transform var(--transition), background var(--transition);
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--card-hover);
+      opacity: 0;
+      transition: opacity var(--transition);
+      pointer-events: none;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 20%, transparent),
+                  var(--shadow);
+    }
+    .card:hover::after { opacity: 1; }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.85rem;
+    }
+    .card-icon { font-size: 1.5rem; line-height: 1; }
+
+    .badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    .card h3 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.45rem; }
+
+    .card p {
+      font-size: 0.83rem;
+      color: var(--text-2);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    .card .tags { margin-bottom: 1rem; }
+
+    .card-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.77rem;
+      color: var(--accent);
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: gap var(--transition);
+    }
+    .card:hover .card-link { gap: 0.5rem; }
+
+    /* ═══════════════════════════════════════════
+       ABOUT
+    ═══════════════════════════════════════════ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      font-size: 0.92rem;
+      color: var(--text-2);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+
+    .about-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .profile-link {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.75rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.85rem;
+      transition: border-color var(--transition), background var(--transition), transform var(--transition);
+    }
+    .profile-link:hover {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+      transform: translateX(3px);
+      opacity: 1;
+    }
+
+    .profile-link-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+    .profile-link-sub {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--text-3);
+      margin-top: 0.05rem;
+    }
+
     .li-badge-wrap {
       display: flex;
       justify-content: center;
       align-items: flex-start;
+      padding-top: 0.5rem;
     }
 
-    /* ─── FOOTER ─── */
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      color: var(--muted);
+      font-size: 0.72rem;
+      color: var(--text-3);
+      transition: border-color var(--transition);
+    }
+    footer a { color: var(--text-3); }
+    footer a:hover { color: var(--accent); opacity: 1; }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 700px) {
+      nav          { padding: 0 1.25rem; }
+      main         { padding: 0 1.25rem; }
+      .hero        { padding: 4rem 0 3rem; }
+      .hero::before { display: none; }
+      section      { padding: 3.5rem 0; }
+      .about-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
+      footer       { flex-direction: column; text-align: center; }
     }
 
-    footer a { color: var(--muted); }
-    footer a:hover { color: var(--accent); }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 680px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { gap: 1.1rem; }
-      main { padding: 0 1.25rem; }
-      .hero { padding: 4rem 0 3rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      section { padding: 3.5rem 0; }
-    }
-
-    @media (max-width: 400px) {
-      .nav-links .nav-show-sm { display: none; }
+    @media (max-width: 480px) {
+      .nav-right .nav-hide { display: none; }
+      .hero h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
 
+  <!-- ─── NAVIGATION ─── -->
   <nav>
-    <span class="nav-logo">VV &nbsp;<span>Vijay Velu</span></span>
-    <ul class="nav-links">
-      <li class="nav-show-sm"><a href="/posts/">Posts</a></li>
-      <li class="nav-show-sm"><a href="#experience">Experience</a></li>
-      <li class="nav-show-sm"><a href="#about">About</a></li>
-      <li><a href="https://github.com/vijay-velu" target="_blank" rel="noopener" class="nav-cta">GitHub ↗</a></li>
+    <div class="nav-logo">
+      <span class="logo-accent">VV</span> Vijay Velu
+    </div>
+    <ul class="nav-right">
+      <li class="nav-hide"><a href="/posts/">Posts</a></li>
+      <li class="nav-hide"><a href="#experience">Experience</a></li>
+      <li class="nav-hide"><a href="#about">About</a></li>
+      <li><a href="https://github.com/vijay-velu" target="_blank" rel="noopener" class="btn btn-ghost nav-gh">GitHub ↗</a></li>
+      <li>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+          <span id="themeIcon">☀️</span>
+        </button>
+      </li>
     </ul>
   </nav>
 
   <main>
 
-    <!-- HERO -->
+    <!-- ─── HERO ─── -->
     <section class="hero">
-      <div class="hero-eyebrow">// senior technical support specialist · iam · opentext · bengaluru</div>
-      <h1>
-        I troubleshoot<br>what others <span class="hi">escalate.</span>
+
+      <div class="hero-status reveal">
+        <span class="status-dot"></span>
+        Available to connect · Bengaluru, Karnataka
+      </div>
+
+      <div class="hero-eyebrow reveal reveal-delay-1">// senior technical support specialist · iam · opentext</div>
+
+      <h1 class="reveal reveal-delay-1">
+        I troubleshoot what<br>
+        others <span class="grad">escalate.</span><span class="cursor"></span>
       </h1>
-      <p class="hero-desc">
-        10+ years in enterprise tech. Last year deep in Identity &amp; Access Management —
-        specialising in NetIQ IDM, eDirectory, and NAM on the OpenText stack.
-        CEH-certified ethical hacker. TryHackMe Level 8. I build the lab environments
-        that isolate root causes before they become R&amp;D handoffs.
+
+      <p class="hero-desc reveal reveal-delay-2">
+        <strong>10+ years</strong> in enterprise tech. Last year deep in
+        <strong>Identity &amp; Access Management</strong> — NetIQ IDM, eDirectory &amp; NAM
+        on the OpenText stack. I build the lab environments that isolate root causes
+        before they become R&amp;D handoffs.
+        <br><br>
+        Off-hours: CEH-certified ethical hacker, TryHackMe <strong>Level 8</strong>,
+        Advent of Cyber 2024 completed.
       </p>
-      <div class="hero-actions">
+
+      <div class="hero-actions reveal reveal-delay-3">
         <a href="/posts/" class="btn btn-primary">View Posts ↓</a>
         <a href="https://github.com/vijay-velu" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
         <a href="https://www.linkedin.com/in/vijay-velu" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
       </div>
+
     </section>
 
-    <!-- EXPERTISE -->
+    <!-- ─── SKILLS ─── -->
     <section id="expertise">
-      <div class="section-label">// certifications &amp; tech stack</div>
-      <div class="skills-wrap">
-        <!-- Certs -->
-        <span class="skill cert">CEH — EC-Council</span>
-        <span class="skill cert">CCNA</span>
-        <span class="skill cert">PG Cyber Security — Simplilearn</span>
-        <span class="skill cert">Agent Assist &amp; Gen AI — Google</span>
-        <span class="skill cert">Build AI Agents — Google</span>
-        <!-- IAM -->
-        <span class="skill">NetIQ IDM</span>
-        <span class="skill">eDirectory</span>
-        <span class="skill">NetIQ Access Manager</span>
-        <span class="skill">OpenText IAM</span>
-        <span class="skill">Azure Entra ID</span>
-        <span class="skill">AWS IAM</span>
-        <span class="skill">Active Directory</span>
-        <span class="skill">Microsoft SQL Server</span>
-        <!-- Infra / OS -->
-        <span class="skill">RHEL</span>
-        <span class="skill">SUSE Linux</span>
-        <span class="skill">Windows Server</span>
-        <!-- Security -->
-        <span class="skill">Penetration Testing</span>
-        <span class="skill">Wireshark</span>
-        <span class="skill">Nmap</span>
-        <span class="skill">Metasploit</span>
-        <span class="skill">Burp Suite</span>
-        <span class="skill">OSINT</span>
-        <span class="skill">TryHackMe</span>
-        <span class="skill">HackTheBox</span>
+      <div class="section-label reveal">// certifications &amp; tech stack</div>
+
+      <div class="skills-group reveal reveal-delay-1">
+        <div class="skills-group-label">Certifications</div>
+        <div class="skills-wrap">
+          <span class="skill cert">CEH — EC-Council</span>
+          <span class="skill cert">CCNA</span>
+          <span class="skill cert">PG Cyber Security — Simplilearn</span>
+          <span class="skill cert">Agent Assist &amp; Gen AI — Google</span>
+          <span class="skill cert">Build AI Agents — Google</span>
+        </div>
       </div>
+
+      <div class="skills-group reveal reveal-delay-2">
+        <div class="skills-group-label">IAM Stack</div>
+        <div class="skills-wrap">
+          <span class="skill">NetIQ IDM</span>
+          <span class="skill">eDirectory</span>
+          <span class="skill">NetIQ Access Manager</span>
+          <span class="skill">OpenText IAM</span>
+          <span class="skill">Azure Entra ID</span>
+          <span class="skill">AWS IAM</span>
+          <span class="skill">Active Directory</span>
+          <span class="skill">Microsoft SQL Server</span>
+        </div>
+      </div>
+
+      <div class="skills-group reveal reveal-delay-3">
+        <div class="skills-group-label">Infrastructure &amp; OS</div>
+        <div class="skills-wrap">
+          <span class="skill">RHEL</span>
+          <span class="skill">SUSE Linux</span>
+          <span class="skill">Windows Server</span>
+        </div>
+      </div>
+
+      <div class="skills-group reveal">
+        <div class="skills-group-label">Security</div>
+        <div class="skills-wrap">
+          <span class="skill">Penetration Testing</span>
+          <span class="skill">Wireshark</span>
+          <span class="skill">Nmap</span>
+          <span class="skill">Metasploit</span>
+          <span class="skill">Burp Suite</span>
+          <span class="skill">OSINT</span>
+          <span class="skill">TryHackMe</span>
+          <span class="skill">HackTheBox</span>
+        </div>
+      </div>
+
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- ─── EXPERIENCE ─── -->
     <section id="experience">
-      <div class="section-label">// work experience</div>
+      <div class="section-label reveal">// work experience</div>
       <div class="exp-list">
 
-        <div class="exp-card">
+        <div class="exp-card reveal reveal-delay-1">
           <div class="exp-header">
             <span class="exp-title">Senior Technical Support Specialist · IAM · Identity &amp; Access Management</span>
             <span class="exp-period">Present</span>
@@ -470,18 +786,18 @@
       </div>
     </section>
 
-    <!-- FOCUS AREAS -->
+    <!-- ─── FOCUS AREAS ─── -->
     <section id="posts">
-      <div class="section-label">// current focus areas</div>
+      <div class="section-label reveal">// on this site</div>
       <div class="cards">
 
-        <div class="card">
+        <div class="card reveal reveal-delay-1">
           <div class="card-top">
             <span class="card-icon">🔐</span>
             <span class="badge">active</span>
           </div>
           <h3>TryHackMe Writeups</h3>
-          <p>Step-by-step room walkthroughs covering web exploitation, privilege escalation, forensics, and more.</p>
+          <p>Step-by-step room walkthroughs — web exploitation, privilege escalation, forensics, and more. Level 8, Advent of Cyber 2024 completed.</p>
           <div class="tags">
             <span class="tag">CTF</span>
             <span class="tag">Walkthrough</span>
@@ -491,13 +807,13 @@
           <a href="/posts/" class="card-link">View posts →</a>
         </div>
 
-        <div class="card">
+        <div class="card reveal reveal-delay-2">
           <div class="card-top">
             <span class="card-icon">📡</span>
             <span class="badge">active</span>
           </div>
           <h3>HackTheBox Machines</h3>
-          <p>Methodical approaches to retired machines — network pivoting, Active Directory attacks, and binary exploitation.</p>
+          <p>Methodical breakdowns of retired machines — network pivoting, Active Directory attacks, and binary exploitation.</p>
           <div class="tags">
             <span class="tag">HTB</span>
             <span class="tag">OSCP-prep</span>
@@ -507,13 +823,13 @@
           <a href="/posts/" class="card-link">View posts →</a>
         </div>
 
-        <div class="card">
+        <div class="card reveal reveal-delay-3">
           <div class="card-top">
             <span class="card-icon">📚</span>
             <span class="badge">active</span>
           </div>
           <h3>Certification Guides</h3>
-          <p>Comprehensive study notes for CEH, CCNA, and other security certifications — condensed and exam-ready.</p>
+          <p>Condensed, exam-ready study notes for CEH, CCNA, and beyond. Written for practitioners, not students.</p>
           <div class="tags">
             <span class="tag">CEH</span>
             <span class="tag">CCNA</span>
@@ -526,50 +842,53 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ─── ABOUT ─── -->
     <section id="about">
-      <div class="section-label">// about me</div>
+      <div class="section-label reveal">// about me</div>
       <div class="about-grid">
+
         <div class="about-text">
-          <p>
-            Senior Technical Support Specialist with 10+ years of experience, the last year
-            deep in Identity and Access Management — specialising in NetIQ IDM, eDirectory,
-            and NetIQ Access Manager (NAM) on the OpenText stack.
+          <p class="reveal reveal-delay-1">
+            Senior Technical Support Specialist with <strong>10+ years of experience</strong>,
+            the last year deep in Identity and Access Management — specialising in
+            <strong>NetIQ IDM, eDirectory, and NAM</strong> on the OpenText stack.
           </p>
-          <p>
+          <p class="reveal reveal-delay-1">
             I troubleshoot what others escalate.
           </p>
-          <p>
-            Outside of work: CEH-certified ethical hacker, TryHackMe Level 8 (Advent of
-            Cyber 2024 completed, 30-Day Streak). This site is where I document CTF
-            writeups, HackTheBox machines, and certification study guides.
-            If it helps you learn something new, mission accomplished.
+          <p class="reveal reveal-delay-2">
+            Outside of the day job: CEH-certified ethical hacker, TryHackMe
+            <strong>Level 8</strong> (Advent of Cyber 2024, 30-Day Streak), and
+            active on HackTheBox. This site documents CTF writeups, machine
+            walkthroughs, and cert study guides. If it helps you, mission accomplished.
           </p>
-          <div class="about-links" style="margin-top:1.5rem;">
-            <a href="https://github.com/vijay-velu" target="_blank" rel="noopener" class="profile-link">
+
+          <div class="about-links">
+            <a href="https://github.com/vijay-velu" target="_blank" rel="noopener" class="profile-link reveal reveal-delay-1">
               <span class="profile-link-icon">⌨️</span>
               <div>
                 <span>GitHub</span>
                 <span class="profile-link-sub">github.com/vijay-velu</span>
               </div>
             </a>
-            <a href="https://www.linkedin.com/in/vijay-velu" target="_blank" rel="noopener" class="profile-link">
+            <a href="https://www.linkedin.com/in/vijay-velu" target="_blank" rel="noopener" class="profile-link reveal reveal-delay-2">
               <span class="profile-link-icon">💼</span>
               <div>
                 <span>LinkedIn</span>
                 <span class="profile-link-sub">linkedin.com/in/vijay-velu</span>
               </div>
             </a>
-            <a href="https://tryhackme.com/p/vijay.velu" target="_blank" rel="noopener" class="profile-link">
+            <a href="https://tryhackme.com/p/vijay.velu" target="_blank" rel="noopener" class="profile-link reveal reveal-delay-3">
               <span class="profile-link-icon">🎯</span>
               <div>
                 <span>TryHackMe</span>
-                <span class="profile-link-sub">tryhackme.com/p/vijay.velu</span>
+                <span class="profile-link-sub">tryhackme.com/p/vijay.velu · Level 8</span>
               </div>
             </a>
           </div>
         </div>
-        <div class="li-badge-wrap">
+
+        <div class="li-badge-wrap reveal reveal-delay-2">
           <div class="badge-base LI-profile-badge"
                data-locale="en_US"
                data-size="medium"
@@ -578,17 +897,92 @@
                data-vanity="vijay-velu"
                data-version="v1">
             <a class="badge-base__link LI-simple-link"
-               href="https://in.linkedin.com/in/vijay-velu?trk=profile-badge">Vijay V.</a>
+               href="https://in.linkedin.com/in/vijay-velu?trk=profile-badge">Vijay Velu</a>
           </div>
         </div>
+
       </div>
     </section>
 
   </main>
 
   <footer>
-    <p>// Built with Jekyll &middot; GitHub Pages &middot; &copy; {{ site.time | date: '%Y' }} Vijay Velu</p>
+    <span>// &copy; {{ site.time | date: '%Y' }} Vijay Velu</span>
+    <span>
+      Built with
+      <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> ·
+      <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+    </span>
   </footer>
+
+  <script>
+    /* ── Theme: auto-detect + manual toggle ── */
+    (function () {
+      const html   = document.documentElement;
+      const btn    = document.getElementById('themeToggle');
+      const icon   = document.getElementById('themeIcon');
+      const DARK   = 'dark';
+      const LIGHT  = 'light';
+
+      function getSystemTheme() {
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? LIGHT : DARK;
+      }
+
+      function applyTheme(theme) {
+        html.setAttribute('data-theme', theme);
+        icon.textContent = theme === DARK ? '☀️' : '🌙';
+        localStorage.setItem('vv-theme', theme);
+      }
+
+      /* On load: respect saved preference, else follow system */
+      const saved = localStorage.getItem('vv-theme');
+      applyTheme(saved || getSystemTheme());
+
+      /* Manual toggle */
+      btn.addEventListener('click', function () {
+        applyTheme(html.getAttribute('data-theme') === DARK ? LIGHT : DARK);
+      });
+
+      /* Follow system changes if user hasn't manually chosen */
+      window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
+        if (!localStorage.getItem('vv-theme')) {
+          applyTheme(e.matches ? LIGHT : DARK);
+        }
+      });
+    })();
+
+    /* ── Scroll reveal ── */
+    (function () {
+      if (!window.IntersectionObserver) {
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('visible');
+        });
+        return;
+      }
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+
+    /* ── Nav border on scroll ── */
+    (function () {
+      var nav = document.querySelector('nav');
+      window.addEventListener('scroll', function () {
+        nav.style.borderBottomColor = window.scrollY > 10
+          ? 'var(--border)'
+          : 'transparent';
+      }, { passive: true });
+    })();
+  </script>
 
 </body>
 </html>

@@ -9,6 +9,7 @@
   <meta name="description" content="Cybersecurity engineer focused on penetration testing, network security, and sharing knowledge through detailed writeups.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -281,6 +282,60 @@
       margin-top: 0.1rem;
     }
 
+    /* ─── EXPERIENCE ─── */
+    .exp-list { display: flex; flex-direction: column; gap: 1rem; }
+
+    .exp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .exp-card:hover { border-color: var(--accent); }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .exp-title { font-size: 0.97rem; font-weight: 600; }
+
+    .exp-period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.73rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .exp-company {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 0.65rem;
+      display: block;
+    }
+
+    .exp-desc {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 0.65rem;
+    }
+
+    /* ─── LINKEDIN BADGE ─── */
+    .li-badge-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
     /* ─── FOOTER ─── */
     footer {
       border-top: 1px solid var(--border);
@@ -315,7 +370,8 @@
     <span class="nav-logo">VV &nbsp;<span>Vijay Velu</span></span>
     <ul class="nav-links">
       <li class="nav-show-sm"><a href="/posts/">Posts</a></li>
-      <li class="nav-show-sm"><a href="/about/">About</a></li>
+      <li class="nav-show-sm"><a href="#experience">Experience</a></li>
+      <li class="nav-show-sm"><a href="#about">About</a></li>
       <li><a href="https://github.com/vijay-velu" target="_blank" rel="noopener" class="nav-cta">GitHub ↗</a></li>
     </ul>
   </nav>
@@ -358,6 +414,49 @@
         <span class="skill">TryHackMe</span>
         <span class="skill">HackTheBox</span>
         <span class="skill">CTF</span>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-label">// work experience</div>
+      <div class="exp-list">
+
+        <!-- ── Role 1 ── update company & dates from your LinkedIn ── -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <span class="exp-title">Cybersecurity Engineer</span>
+            <span class="exp-period">[Start Year] – Present</span>
+          </div>
+          <span class="exp-company">[Company Name]</span>
+          <p class="exp-desc">
+            Security assessments, vulnerability management, and penetration testing across
+            internal and client-facing systems. Threat modelling, incident response, and
+            network security hardening.
+          </p>
+          <div class="tags">
+            <span class="tag">Pen Testing</span>
+            <span class="tag">Network Security</span>
+            <span class="tag">Incident Response</span>
+          </div>
+        </div>
+
+        <!-- ── Role 2 ── add / remove cards to match your LinkedIn ── -->
+        <div class="exp-card">
+          <div class="exp-header">
+            <span class="exp-title">[Previous Role Title]</span>
+            <span class="exp-period">[Start] – [End]</span>
+          </div>
+          <span class="exp-company">[Company Name]</span>
+          <p class="exp-desc">
+            [Brief description of responsibilities and achievements.]
+          </p>
+          <div class="tags">
+            <span class="tag">[Skill]</span>
+            <span class="tag">[Skill]</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -437,29 +536,41 @@
             Production-ready thinking, clean methodology, and a belief that
             understanding attacks is the best way to build defenses.
           </p>
+          <div class="about-links" style="margin-top:1.5rem;">
+            <a href="https://github.com/vijay-velu" target="_blank" rel="noopener" class="profile-link">
+              <span class="profile-link-icon">⌨️</span>
+              <div>
+                <span>GitHub</span>
+                <span class="profile-link-sub">github.com/vijay-velu</span>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/vijay-velu" target="_blank" rel="noopener" class="profile-link">
+              <span class="profile-link-icon">💼</span>
+              <div>
+                <span>LinkedIn</span>
+                <span class="profile-link-sub">linkedin.com/in/vijay-velu</span>
+              </div>
+            </a>
+            <a href="https://tryhackme.com/p/vijay.velu" target="_blank" rel="noopener" class="profile-link">
+              <span class="profile-link-icon">🎯</span>
+              <div>
+                <span>TryHackMe</span>
+                <span class="profile-link-sub">tryhackme.com/p/vijay.velu</span>
+              </div>
+            </a>
+          </div>
         </div>
-        <div class="about-links">
-          <a href="https://github.com/vijay-velu" target="_blank" rel="noopener" class="profile-link">
-            <span class="profile-link-icon">⌨️</span>
-            <div>
-              <span>GitHub</span>
-              <span class="profile-link-sub">github.com/vijay-velu</span>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/vijay-velu" target="_blank" rel="noopener" class="profile-link">
-            <span class="profile-link-icon">💼</span>
-            <div>
-              <span>LinkedIn</span>
-              <span class="profile-link-sub">linkedin.com/in/vijay-velu</span>
-            </div>
-          </a>
-          <a href="https://tryhackme.com/p/vijay.velu" target="_blank" rel="noopener" class="profile-link">
-            <span class="profile-link-icon">🎯</span>
-            <div>
-              <span>TryHackMe</span>
-              <span class="profile-link-sub">tryhackme.com/p/vijay.velu</span>
-            </div>
-          </a>
+        <div class="li-badge-wrap">
+          <div class="badge-base LI-profile-badge"
+               data-locale="en_US"
+               data-size="medium"
+               data-theme="dark"
+               data-type="VERTICAL"
+               data-vanity="vijay-velu"
+               data-version="v1">
+            <a class="badge-base__link LI-simple-link"
+               href="https://in.linkedin.com/in/vijay-velu?trk=profile-badge">Vijay V.</a>
+          </div>
         </div>
       </div>
     </section>

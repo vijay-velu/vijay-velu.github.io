@@ -55,6 +55,12 @@ Experimenting with agentic AI systems across Claude and Google. Custom Claude ag
 
 ---
 
+### LinkedIn
+
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="vijay-velu" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/vijay-velu?trk=profile-badge">Vijay V.</a></div>
+
+---
+
 ### TryHackMe Badge
 
 <img src="https://tryhackme-badges.s3.amazonaws.com/vijay.velu.png" alt="TryHackMe Badge" width="300" />

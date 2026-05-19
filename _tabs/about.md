@@ -27,6 +27,14 @@ Not because it's easier — because it's more defensible.
 
 ---
 
+### AI Labs
+
+Experimenting with agentic AI systems across Claude and Google. Custom Claude agents (researcher, analyst, incident commander, extractor), daily Claude Code CLI usage for app development, and certified in Google's AI agent track.
+
+→ **[AI Labs](/ai-labs/)** — agents, prompts, and tooling
+
+---
+
 ### Certifications
 
 - **CEH** — EC-Council
@@ -43,6 +51,7 @@ Not because it's easier — because it's more defensible.
 - [LinkedIn](https://www.linkedin.com/in/vijay-velu)
 - [TryHackMe](https://tryhackme.com/p/vijay.velu) — vijay.velu · Level 8
 - [Vee Labs](/vee-labs/) — building apps
+- [AI Labs](/ai-labs/) — agents &amp; prompting
 
 ---
 

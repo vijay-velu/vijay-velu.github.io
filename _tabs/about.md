@@ -1,19 +1,39 @@
 ---
-icon: fas fa-info-circle
+title: About
 order: 4
 ---
 
-## Hey, I'm Vijay Velu
+## Vijay Velu
 
-Security engineer and ethical hacker based in India. I'm certified in **CEH** and **CCNA**, and I'm always working toward the next challenge — whether that's a new CTF room, a retired HackTheBox machine, or a certification.
+Senior Technical Support Specialist with 10+ years of experience, deep in Identity and Access Management — NetIQ IDM, eDirectory, and NetIQ Access Manager (NAM) on the OpenText stack.
 
-This site is where I document everything:
+**I troubleshoot what others escalate.**
 
-- **TryHackMe writeups** — step-by-step walkthroughs covering web exploitation, privilege escalation, forensics, and more
-- **HackTheBox machines** — methodical breakdowns of retired machines, including Active Directory and network pivoting
-- **Certification study guides** — condensed, exam-ready notes for CEH, CCNA, and beyond
+Scope covers IDM upgrade failures, eDirectory certificate chain issues, User Application (UA) performance bottlenecks, and workflow design & provisioning logic — across RHEL, SUSE, and Windows Server environments. Disproportionate value added through lab engineering: full-stack reproduction environments integrating Active Directory, Microsoft SQL Server, Azure Entra ID, and AWS IAM.
 
-I believe understanding how attacks work is the best way to build defenses. If these posts help you learn something new, mission accomplished.
+---
+
+### Self-Hosted Infrastructure
+
+Building a privacy-first, trust-minimized infrastructure stack. Self-hosted photo storage (Ente + Immich), local AI inference (Open WebUI), S3-compatible object storage (MinIO), zero-trust networking (Cloudflare Tunnel), and self-hosted monitoring (Uptime Kuma).
+
+Not because it's easier — because it's more defensible.
+
+---
+
+### Building Apps
+
+**[Vee Labs](/vee-labs/)** is where I ship mobile software — privacy-first apps and field-service tools built with Flutter, Kotlin, and Firebase. Same security-first mindset, applied to product development.
+
+---
+
+### Certifications
+
+- **CEH** — EC-Council
+- **CCNA** — Cisco
+- **PG Diploma in Cyber Security** — Simplilearn
+- **Agent Assist & Gen AI** — Google
+- **Build AI Agents** — Google
 
 ---
 
@@ -21,7 +41,8 @@ I believe understanding how attacks work is the best way to build defenses. If t
 
 - [GitHub](https://github.com/vijay-velu)
 - [LinkedIn](https://www.linkedin.com/in/vijay-velu)
-- [TryHackMe](https://tryhackme.com/p/vijay.velu)
+- [TryHackMe](https://tryhackme.com/p/vijay.velu) — vijay.velu · Level 8
+- [Vee Labs](/vee-labs/) — building apps
 
 ---
 

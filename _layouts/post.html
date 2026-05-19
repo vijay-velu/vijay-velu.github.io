@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<main class="page-main">
+  <article>
+    <header class="page-header r">
+      <div class="sl">// post</div>
+      <h1 class="page-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        <span class="exp-period">{{ page.date | date: "%B %-d, %Y" }}</span>
+        {% if page.categories.size > 0 %}
+        <span class="post-cats">
+          {% for cat in page.categories %}<a href="/categories/#{{ cat | slugify }}">{{ cat }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
+        </span>
+        {% endif %}
+      </div>
+    </header>
+
+    <div class="prose r d1">
+      {{ content }}
+    </div>
+
+    {% if page.tags.size > 0 %}
+    <div class="post-tags-footer r">
+      <div class="tags">
+        {% for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </article>
+</main>

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<main class="page-main">
+  <div class="page-header r">
+    <div class="sl">// archives</div>
+    <h1 class="page-title">Archives</h1>
+  </div>
+  {% if site.posts.size == 0 %}
+  <div class="empty-state r">No posts published yet.</div>
+  {% else %}
+  <div class="archive-list">
+    {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {% for year_group in posts_by_year %}
+    <div class="archive-group r">
+      <div class="archive-heading">
+        {{ year_group.name }}
+        <span class="archive-count">{{ year_group.items.size }}</span>
+      </div>
+      <ul class="post-list">
+        {% for post in year_group.items %}
+        <li class="post-item">
+          <a href="{{ post.url }}" class="post-link">{{ post.title }}</a>
+          <span class="post-date-label">{{ post.date | date: "%b %-d" }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</main>

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<main class="page-main">
+  <div class="page-header r">
+    <div class="sl">// categories</div>
+    <h1 class="page-title">Categories</h1>
+  </div>
+  {% if site.categories.size == 0 %}
+  <div class="empty-state r">No posts published yet.</div>
+  {% else %}
+  <div class="archive-list">
+    {% assign sorted_cats = site.categories | sort %}
+    {% for category in sorted_cats %}
+    <div class="archive-group r" id="{{ category[0] | slugify }}">
+      <div class="archive-heading">
+        {{ category[0] }}
+        <span class="archive-count">{{ category[1].size }}</span>
+      </div>
+      <ul class="post-list">
+        {% for post in category[1] %}
+        <li class="post-item">
+          <a href="{{ post.url }}" class="post-link">{{ post.title }}</a>
+          <span class="post-date-label">{{ post.date | date: "%Y-%m-%d" }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</main>

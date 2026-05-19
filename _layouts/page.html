@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<main class="page-main">
+  <div class="page-header r">
+    {% if page.title and page.title != '' %}
+    <div class="sl">// {{ page.title | downcase }}</div>
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% endif %}
+  </div>
+  <div class="prose r d1">
+    {{ content }}
+  </div>
+</main>

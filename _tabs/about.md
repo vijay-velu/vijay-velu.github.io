@@ -11,8 +11,6 @@ Senior IAM Engineer with **11+ years of experience**, deep in Identity and Acces
 
 Scope covers IDM upgrade failures, eDirectory certificate chain issues, User Application (UA) performance bottlenecks, workflow design & provisioning logic, and Identity Governance — across RHEL, SUSE, and Windows Server environments. Disproportionate value added through lab engineering: full-stack reproduction environments integrating Active Directory, Microsoft SQL Server, Azure Entra ID, and AWS IAM — isolating root causes before they become R&D handoffs.
 
-> 🌏 Open to IAM / Identity Security / AI Security roles abroad — Singapore · UAE · UK · EU · Canada · Australia · Remote
-
 ---
 
 ### Self-Hosted Homelab

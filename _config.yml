@@ -16,10 +16,10 @@ timezone: Asia/Kolkata
 
 title: Vijay Velu # the main title
 
-tagline: IAM Engineer · Privacy-First Infrastructure # it will display as the subtitle
+tagline: Senior IAM Engineer · Identity Security · Privacy-First Infrastructure # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Senior Technical Support Specialist at OpenText specialising in IAM, self-hosted infrastructure, and trust-minimized security systems.
+  Senior IAM Engineer with 11+ years in NetIQ IDM, eDirectory, Azure Entra ID, and AWS IAM. Self-hosted homelab, local AI stack, open to IAM/Identity Security roles abroad.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.

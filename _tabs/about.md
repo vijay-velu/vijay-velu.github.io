@@ -5,17 +5,30 @@ order: 4
 
 ## Vijay Velu
 
-Senior Technical Support Specialist with 10+ years of experience, deep in Identity and Access Management — NetIQ IDM, eDirectory, and NetIQ Access Manager (NAM) on the OpenText stack.
+Senior IAM Engineer with **11+ years of experience**, deep in Identity and Access Management — NetIQ IDM, eDirectory, and NetIQ Access Manager (NAM) on the OpenText stack.
 
 **I troubleshoot what others escalate.**
 
-Scope covers IDM upgrade failures, eDirectory certificate chain issues, User Application (UA) performance bottlenecks, and workflow design & provisioning logic — across RHEL, SUSE, and Windows Server environments. Disproportionate value added through lab engineering: full-stack reproduction environments integrating Active Directory, Microsoft SQL Server, Azure Entra ID, and AWS IAM.
+Scope covers IDM upgrade failures, eDirectory certificate chain issues, User Application (UA) performance bottlenecks, workflow design & provisioning logic, and Identity Governance — across RHEL, SUSE, and Windows Server environments. Disproportionate value added through lab engineering: full-stack reproduction environments integrating Active Directory, Microsoft SQL Server, Azure Entra ID, and AWS IAM — isolating root causes before they become R&D handoffs.
+
+> 🌏 Open to IAM / Identity Security / AI Security roles abroad — Singapore · UAE · UK · EU · Canada · Australia · Remote
 
 ---
 
-### Self-Hosted Infrastructure
+### Self-Hosted Homelab
 
-Building a privacy-first, trust-minimized infrastructure stack. Self-hosted photo storage (Ente + Immich), local AI inference (Open WebUI), S3-compatible object storage (MinIO), zero-trust networking (Cloudflare Tunnel), and self-hosted monitoring (Uptime Kuma).
+Running a privacy-first, trust-minimized infrastructure stack.
+
+| Service | Purpose |
+|---|---|
+| Open WebUI | Local LLM inference. Queries never leave the machine. |
+| Paperclip | Autonomous AI agents running local models |
+| Ollama | qwen2.5-coder:7b — GPU-accelerated inference |
+| LM Studio | Larger models (gemma-4-12b-qat, qwen3.6-27b) on CPU/RAM |
+| Ente + Immich | Self-hosted photos — E2E encrypted, local ML |
+| MinIO | S3-compatible object storage, self-hosted |
+| Cloudflare Tunnel | Zero-trust external access, no inbound ports |
+| Uptime Kuma | Self-hosted monitoring |
 
 Not because it's easier — because it's more defensible.
 
@@ -29,9 +42,11 @@ Not because it's easier — because it's more defensible.
 
 ### AI Labs
 
-Experimenting with agentic AI systems across Claude and Google. Custom Claude agents (researcher, analyst, incident commander, extractor), daily Claude Code CLI usage for app development, and certified in Google's AI agent track.
+Running a full local AI stack — Paperclip agents + OpenCode CLI wired to Ollama (GPU) and LM Studio (CPU). No cloud dependency for day-to-day inference.
 
-→ **[AI Labs](/ai-labs/)** — agents, prompts, and tooling
+Also experimenting with cloud agentic systems across Claude and Google. Custom Claude agents (researcher, analyst, incident commander, extractor), daily Claude Code CLI usage, and certified in Google's AI agent track.
+
+→ **[AI Labs](/ai-labs/)** — agents, local LLMs, and tooling
 
 ---
 
@@ -43,6 +58,11 @@ Experimenting with agentic AI systems across Claude and Google. Custom Claude ag
 - **Agent Assist & Gen AI** — Google
 - **Build AI Agents** — Google
 
+**In Progress:**
+- SC-300: Microsoft Identity and Access Administrator
+- CompTIA SecurityAI+ (SecAI+)
+- Okta Certified Professional
+
 ---
 
 ### Connect
@@ -51,7 +71,7 @@ Experimenting with agentic AI systems across Claude and Google. Custom Claude ag
 - [LinkedIn](https://www.linkedin.com/in/vijay-velu)
 - [TryHackMe](https://tryhackme.com/p/vijay.velu) — vijay.velu · Level 8
 - [Vee Labs](/vee-labs/) — building apps
-- [AI Labs](/ai-labs/) — agents &amp; prompting
+- [AI Labs](/ai-labs/) — agents & local LLMs
 
 ---
 

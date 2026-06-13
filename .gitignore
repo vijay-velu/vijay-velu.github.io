@@ -25,3 +25,35 @@ package-lock.json
 # Misc
 _sass/dist
 assets/js/dist
+
+# Obsidian workspace and cache
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace*.json
+.obsidian/file-recovery.json
+
+# Obsidian plugin internals
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/manifest.json
+.obsidian/plugins/*/styles.css
+.obsidian/plugins/*/data*.json
+.obsidian/themes/*
+.obsidian/snippets/*
+
+# Obsidian trash and temporary files
+.trash/
+.Trash/
+.Trash-*/
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+Thumbs.db
+
+# Local secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key

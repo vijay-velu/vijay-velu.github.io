@@ -57,3 +57,12 @@ Thumbs.db
 .env.*.local
 *.pem
 *.key
+
+# --- Obsidian sync duplicates ---
+# iCloud / sync conflict files — never commit
+*.sync-conflict-*
+* [0-9].json
+* [0-9].js
+* [0-9].css
+* - Copy.*
+*.backup[0-9]*
